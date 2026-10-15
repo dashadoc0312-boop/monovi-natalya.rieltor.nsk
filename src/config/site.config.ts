@@ -100,7 +100,7 @@ export const siteConfig = {
   /**
    * Контакты. Оставьте пустую строку "", чтобы скрыть пункт.
    * phone — в международном формате, только цифры и «+».
-   * telegram — личный Telegram: имя пользователя без @ (для кнопки «Связаться в Telegram»).
+   * telegram — личный Telegram: имя пользователя без @ или номер телефона с «+» (для кнопки «Связаться в Telegram»).
    * telegramChannel — ссылка на Telegram-канал, если есть.
    * whatsapp — номер в международном формате без «+» и пробелов.
    * instagram — имя аккаунта без @.
@@ -108,11 +108,19 @@ export const siteConfig = {
   contacts: {
     phone: "+79139192634",
     phoneDisplay: "+7 (913) 919-26-34",
-    telegram: "monoviAgent",
+    telegram: "+79139192634",
     telegramChannel: "https://t.me/+JAMPvI1AmQZmNWZi",
     whatsapp: "79139192634",
     instagram: "natasha.realtor.nsk",
     email: "",
+    /**
+     * Место на карте. mapUrl — ссылка на Google или Яндекс Карты, address — подпись (можно "").
+     * Чтобы скрыть пункт, оставьте mapUrl пустым.
+     */
+    map: {
+      address: "Новосибирск — открыть карту",
+      mapUrl: "https://maps.google.com/maps?q=55.018151,82.942125&ll=55.018151,82.942125&z=16",
+    },
   },
 
   /**

@@ -59,6 +59,13 @@ export const RenovationIcon = (p: IconProps) => (
   </Base>
 );
 
+export const MapPinIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z" />
+    <circle cx="12" cy="9.5" r="2.5" />
+  </Base>
+);
+
 export const PhoneIcon = (p: IconProps) => (
   <Base {...p}>
     <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />

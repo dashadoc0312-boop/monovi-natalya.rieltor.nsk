@@ -2,17 +2,18 @@ import { siteConfig } from "@/config/site.config";
 import { t } from "@/i18n";
 import { links } from "@/lib/links";
 import { external } from "./Button";
-import { InstagramIcon, MailIcon, PhoneIcon, TelegramIcon, WhatsappIcon } from "./icons";
+import { InstagramIcon, MailIcon, MapPinIcon, PhoneIcon, TelegramIcon, WhatsappIcon } from "./icons";
 
 export function Contacts() {
   const c = siteConfig.contacts;
   const items = [
     { href: links.phone, label: t.contacts.phone, value: c.phoneDisplay || c.phone, Icon: PhoneIcon, ext: false },
-    { href: links.telegram, label: t.contacts.telegram, value: `@${c.telegram.replace(/^@/, "")}`, Icon: TelegramIcon, ext: true },
+    { href: links.telegram, label: t.contacts.telegram, value: c.telegram.startsWith("+") ? c.phoneDisplay || c.telegram : `@${c.telegram.replace(/^@/, "")}`, Icon: TelegramIcon, ext: true },
     { href: links.telegramChannel, label: t.contacts.telegramChannel, value: t.contacts.telegramChannelValue, Icon: TelegramIcon, ext: true },
     { href: links.whatsapp, label: t.contacts.whatsapp, value: c.phoneDisplay || `+${c.whatsapp}`, Icon: WhatsappIcon, ext: true },
     { href: links.instagram, label: t.contacts.instagram, value: `@${c.instagram.replace(/^@/, "")}`, Icon: InstagramIcon, ext: true },
     { href: links.email, label: t.contacts.email, value: c.email, Icon: MailIcon, ext: false },
+    { href: links.map, label: t.contacts.map, value: c.map.address || t.contacts.mapValue, Icon: MapPinIcon, ext: true },
   ].filter((i) => i.href);
 
   return (
