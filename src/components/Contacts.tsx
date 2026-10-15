@@ -13,7 +13,6 @@ export function Contacts() {
     { href: links.whatsapp, label: t.contacts.whatsapp, value: c.phoneDisplay || `+${c.whatsapp}`, Icon: WhatsappIcon, ext: true },
     { href: links.instagram, label: t.contacts.instagram, value: `@${c.instagram.replace(/^@/, "")}`, Icon: InstagramIcon, ext: true },
     { href: links.email, label: t.contacts.email, value: c.email, Icon: MailIcon, ext: false },
-    { href: links.map, label: t.contacts.map, value: c.map.address || t.contacts.mapValue, Icon: MapPinIcon, ext: true },
   ].filter((i) => i.href);
 
   return (
@@ -44,6 +43,35 @@ export function Contacts() {
               </a>
             </li>
           ))}
+
+          {(c.office.address || c.office.yandexMapsUrl || c.office.googleMapsUrl) && (
+            <li className="flex gap-4 border-b border-line py-4">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-linen text-pine">
+                <MapPinIcon size={20} />
+              </span>
+              <div className="min-w-0 flex-1">
+                <span className="text-sm text-slate">{t.contacts.office}</span>
+                {c.office.address && <address className="not-italic text-[1.0625rem]">{c.office.address}</address>}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {[
+                    { href: c.office.yandexMapsUrl, label: t.contacts.yandexMaps },
+                    { href: c.office.googleMapsUrl, label: t.contacts.googleMaps },
+                  ]
+                    .filter((m) => m.href)
+                    .map((m) => (
+                      <a
+                        key={m.label}
+                        href={m.href}
+                        {...external}
+                        className="inline-flex min-h-11 items-center rounded-full border border-graphite/20 px-4 text-[0.95rem] transition-colors hover:border-pine hover:text-pine"
+                      >
+                        {m.label}
+                      </a>
+                    ))}
+                </div>
+              </div>
+            </li>
+          )}
         </ul>
       </div>
     </section>

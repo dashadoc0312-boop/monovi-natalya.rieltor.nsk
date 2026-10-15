@@ -67,8 +67,9 @@ export const ru = {
     whatsapp: "WhatsApp",
     instagram: "Instagram",
     email: "Почта",
-    map: "Офис на карте",
-    mapValue: "Открыть на карте",
+    office: "Офис",
+    yandexMaps: "Яндекс Карты",
+    googleMaps: "Google Карты",
   },
   footer: {
     rights: "Все права защищены.",

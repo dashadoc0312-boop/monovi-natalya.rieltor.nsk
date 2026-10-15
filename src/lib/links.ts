@@ -14,7 +14,6 @@ export const links = {
   telegramChannel: c.telegramChannel || "",
   instagram: c.instagram ? `https://instagram.com/${c.instagram.replace(/^@/, "")}` : "",
   email: c.email ? `mailto:${c.email}` : "",
-  map: c.map?.mapUrl || "",
 };
 
 export function whatsappWithText(text: string) {
