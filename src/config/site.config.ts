@@ -109,7 +109,7 @@ export const siteConfig = {
     phone: "+79139192634",
     phoneDisplay: "+7 (913) 919-26-34",
     telegram: "+79139192634",
-    telegramChannel: "https://t.me/+JAMPvI1AmQZmNWZi",
+    telegramChannel: "https://t.me/monoviAgent",
     whatsapp: "79139192634",
     instagram: "natasha.realtor.nsk",
     email: "",
@@ -118,7 +118,7 @@ export const siteConfig = {
      * Чтобы скрыть пункт, оставьте mapUrl пустым.
      */
     map: {
-      address: "Новосибирск — открыть карту",
+      address: "Новосибирск, ул. Кирова", // допишите дом и офис, например "Новосибирск, ул. Кирова, 00, офис 0"
       mapUrl: "https://maps.google.com/maps?q=55.018151,82.942125&ll=55.018151,82.942125&z=16",
     },
   },
